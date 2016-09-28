@@ -14,6 +14,11 @@ elif [ $1 == "storage" ]
 then
 	sudo fdfs_storaged /etc/fdfs/storage.conf
 	echo "storage started";
+elif [ $1 == "nginx" ]
+then
+	sudo mkdir /var/run/nginx;
+        sudo /etc/init.d/nginx start;
+        echo "nginx started";
 else
 	echo "pls enter a valid param ";
 fi
